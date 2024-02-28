@@ -1,0 +1,20 @@
+<div class="container">
+  <h1>Welcome to my Book Page!</h1>
+  <p>Explore our curated collection of books, from classics to bestsellers. Whether you're a seasoned reader or just starting out, there's something here for everyone. Join our community, share your love for literature, and discover new favorites. Plus, this is my first Angular project, so dive in and let's embark on this journey together!</p>
+
+  <div class="book-list">
+    <div class="book" *ngFor="let book of books">
+      <h2>{{ book.title }}</h2>
+      <p><strong>Author:</strong> {{ book.author }}</p>
+      <p>{{ book.description }}</p>
+    </div>
+  </div>
+
+  <form (ngSubmit)="uploadBook()" novalidate>
+    <input type="text" placeholder="Title" [(ngModel)]="newBook.title" name="title" required><br>
+    <input type="text" placeholder="Author" [(ngModel)]="newBook.author" name="author" required><br>
+    <textarea placeholder="Description" [(ngModel)]="newBook.description" name="description" required></textarea><br>
+    <input type="file" (change)="onFileSelected($event)" name="pdfFile" required><br>
+    <button type="submit">Upload Book</button>
+  </form>
+</div>
