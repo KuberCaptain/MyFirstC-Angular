@@ -1,0 +1,7 @@
+<form (ngSubmit)="saveBook()">
+    <input type="text" [(ngModel)]="book.title" name="title" placeholder="Название" required>
+    <input type="text" [(ngModel)]="book.author" name="author" placeholder="Автор" required>
+    <textarea [(ngModel)]="book.description" name="description" placeholder="Описание"></textarea>
+    <button type="submit">Сохранить</button>
+  </form>
+  

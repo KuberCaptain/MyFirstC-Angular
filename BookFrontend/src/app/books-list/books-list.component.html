@@ -1,0 +1,6 @@
+<input type="text" placeholder="Поиск по названию..." [(ngModel)]="searchTerm">
+
+<div *ngFor="let book of books | filter:searchTerm">
+  <h2>{{ book.title }} <small>by {{ book.author }}</small></h2>
+  <button (click)="viewBook(book.id)">Подробнее</button>
+</div>
